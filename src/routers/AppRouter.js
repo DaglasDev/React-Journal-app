@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HashRouter as Router, Redirect, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { firebase } from "../firebase/firebaseConfig.js";
@@ -34,7 +34,7 @@ export const AppRouter = () => {
 	}
 
 	return (
-		<Router>
+		<Router basename={process.env.PUBLIC_URL}>
 			<div>
 				<Switch>
 					<PublicRoute
